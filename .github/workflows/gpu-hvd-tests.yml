@@ -27,17 +27,10 @@ jobs:
       DOCKER_IMAGE: "pytorch/almalinux-builder:cuda12.8"
       REPOSITORY: ${{ github.repository }}
       PR_NUMBER: ${{ github.event.pull_request.number }}
-    runs-on: linux.8xlarge.nvidia.gpu
+    runs-on: mt-l-x86iavx512-45-172-t4-4
     timeout-minutes: 60
 
     steps:
-      - name: Clean workspace
-        run: |
-          echo "::group::Cleanup debug output"
-          sudo rm -rfv "${GITHUB_WORKSPACE}"
-          mkdir -p "${GITHUB_WORKSPACE}"
-          echo "::endgroup::"
-
       - name: Checkout repository (pytorch/test-infra)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
