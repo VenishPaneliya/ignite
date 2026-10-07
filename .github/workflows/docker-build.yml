@@ -55,15 +55,6 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
     runs-on: mt-l-x86iavx512-16-128
     steps:
-      - name: Clean workspace
-        run: |
-          echo "::group::Cleanup debug output"
-          # Clear it rather than remove it: on OSDC the workspace is a bind
-          # mount, and deleting the directory detaches it, after which every
-          # later step fails with "getcwd: cannot access parent directories".
-          find "${GITHUB_WORKSPACE}" -mindepth 1 -delete
-          echo "::endgroup::"
-
       - name: Checkout repository (pytorch/test-infra)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -116,15 +107,6 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
     runs-on: mt-l-x86iavx512-48-384
     steps:
-      - name: Clean workspace
-        run: |
-          echo "::group::Cleanup debug output"
-          # Clear it rather than remove it: on OSDC the workspace is a bind
-          # mount, and deleting the directory detaches it, after which every
-          # later step fails with "getcwd: cannot access parent directories".
-          find "${GITHUB_WORKSPACE}" -mindepth 1 -delete
-          echo "::endgroup::"
-
       - name: Checkout repository (pytorch/test-infra)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -177,15 +159,6 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
     runs-on: mt-l-x86iavx512-16-128
     steps:
-      - name: Clean workspace
-        run: |
-          echo "::group::Cleanup debug output"
-          # Clear it rather than remove it: on OSDC the workspace is a bind
-          # mount, and deleting the directory detaches it, after which every
-          # later step fails with "getcwd: cannot access parent directories".
-          find "${GITHUB_WORKSPACE}" -mindepth 1 -delete
-          echo "::endgroup::"
-
       - name: Checkout repository (pytorch/test-infra)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -238,15 +211,6 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
     runs-on: mt-l-x86iavx512-48-384
     steps:
-      - name: Clean workspace
-        run: |
-          echo "::group::Cleanup debug output"
-          # Clear it rather than remove it: on OSDC the workspace is a bind
-          # mount, and deleting the directory detaches it, after which every
-          # later step fails with "getcwd: cannot access parent directories".
-          find "${GITHUB_WORKSPACE}" -mindepth 1 -delete
-          echo "::endgroup::"
-
       - name: Checkout repository (pytorch/test-infra)
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
